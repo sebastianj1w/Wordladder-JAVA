@@ -12,6 +12,10 @@ public class App
         System.out.println("Loading dict file");
         Set<String> wordSet = loadDict("./dictionary.txt");
 
+        if (wordSet.isEmpty()) {
+            return;
+        }
+
         String startingWord = readWord(0);
         String endingWord  = readWord(1);
 
