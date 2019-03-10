@@ -8,8 +8,7 @@ import java.util.*;
 
 public class App
 {
-    public static void main(String[] args) throws Exception
-    {
+    public static void main(String[] args) throws Exception {
         System.out.println("Loading dict file");
         Set<String> wordSet = loadDict("./dictionary.txt");
 
@@ -27,7 +26,7 @@ public class App
         if (ans.isEmpty()) {
             System.out.println("not found");
         }
-        else{
+        else {
             System.out.println("found");
             System.out.println(ans);
         }
