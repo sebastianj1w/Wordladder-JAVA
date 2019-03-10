@@ -24,6 +24,6 @@ If you see a prompt shows `dict not exits`, it means that the program can't find
 
 Most functions are unit tested. Results are in `/target/surefire-reports`. Here is a screenshot of result showed in intellij IDEA.
 
-<div style="align: center">
-<img src="./result.png" style="width: 700px;">
+<div align="center">
+<img src="./result.png" width="700"/>
 </div>
