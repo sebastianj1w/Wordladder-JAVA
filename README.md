@@ -19,3 +19,9 @@ You can use it by jar file in `/target`. Put the dictionary file in the same fol
 Then you will see prompts that prompts you to enter the words. Just follow the prompts.
 
 If you see a prompt shows `dict not exits`, it means that the program can't find the dictionary file, check is the file is in the same folder.
+
+## About Unit Tests
+
+Most functions are unit tested. Results are in `/target/surefire-reports`. Here is a screenshot of result showed in intellij IDEA.
+
+<img src="./result.png">
