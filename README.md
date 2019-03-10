@@ -10,3 +10,12 @@ This is a command line program aiming to find a ladder between two words. You wi
 
 ## How can you use it?
 
+You can use it by jar file in `/target`. Put the dictionary file in the same folder and execute the following instructions:
+
+```powershell
+    java -jar .\WordLadderJAVA-1.0-SNAPSHOT.jar
+```
+
+Then you will see prompts that prompts you to enter the words. Just follow the prompts.
+
+If you see a prompt shows `dict not exits`, it means that the program can't find the dictionary file, check is the file is in the same folder.
