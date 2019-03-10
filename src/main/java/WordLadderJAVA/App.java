@@ -33,14 +33,15 @@ public class App
         }
     }
 
-    private static Set<String> loadDict(String path) throws Exception{
-        Set<String> wordSet = new TreeSet<String>();
-
+    public static Set<String> loadDict(String path) throws Exception{
         File dictFile = new File(path);
 
         if (!dictFile.exists()) {
             System.out.println("dict not exits");
+            return new TreeSet<>();
         }
+
+        Set<String> wordSet = new TreeSet<String>();
 
         BufferedReader reader = new BufferedReader(new FileReader(dictFile));
         String tempString = null;
@@ -55,7 +56,7 @@ public class App
         return wordSet;
     }
 
-    private static String readWord(int mode) throws Exception{
+    public static String readWord(int mode) throws Exception{
         String word;
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         if (mode == 0) {
@@ -69,7 +70,7 @@ public class App
         return word;
     }
 
-    private static Stack<String> findLadder(String startingWord, String endingWord, Set<String> wordSet) {
+    public static Stack<String> findLadder(String startingWord, String endingWord, Set<String> wordSet) {
         Queue<Stack<String>> queue = new LinkedList<Stack<String>>();
         Stack<String> beginningList = new Stack<String>();
         beginningList.push(startingWord);
@@ -103,7 +104,7 @@ public class App
         return new Stack<String>();
     }
 
-    private static int checkValidity(String start, String end, Set<String> wordSet) {
+    public static int checkValidity(String start, String end, Set<String> wordSet) {
         if (!wordSet.contains(start)) {
             System.out.println("starting word not exits");
             return 1;
