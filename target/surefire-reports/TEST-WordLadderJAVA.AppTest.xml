@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="WordLadderJAVA.AppTest" time="0.041" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="WordLadderJAVA.AppTest" time="0.047" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -17,7 +17,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="CN"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-11.0.2\bin"/>
-    <property name="sun.java.command" value="C:\Users\Sebas\AppData\Local\Temp\surefire13345314324593147021\surefirebooter6289122464329970920.jar C:\Users\Sebas\AppData\Local\Temp\surefire13345314324593147021 2019-03-10T12-35-36_466-jvmRun1 surefire15508872221964736304tmp surefire_08178472437976147632tmp"/>
+    <property name="sun.java.command" value="C:\Users\Sebas\AppData\Local\Temp\surefire15403806722375683236\surefirebooter6366729574800587611.jar C:\Users\Sebas\AppData\Local\Temp\surefire15403806722375683236 2019-03-10T13-04-22_723-jvmRun1 surefire6497083425385851991tmp surefire_08150932317440645529tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\1Study\WordLadderJAVA\target\test-classes;C:\1Study\WordLadderJAVA\target\classes;C:\Users\Sebas\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\Sebas\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -33,7 +33,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Users\Sebas\AppData\Local\Temp\surefire13345314324593147021\surefirebooter6289122464329970920.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Sebas\AppData\Local\Temp\surefire15403806722375683236\surefirebooter6366729574800587611.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="11.0.2+9-LTS"/>

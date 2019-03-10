@@ -6,14 +6,38 @@ import java.io.FileReader;
 import java.io.InputStreamReader;
 import java.util.*;
 
-public class App 
+public class App
 {
     public static void main(String[] args) throws Exception
     {
+        System.out.println("Loading dict file");
+        Set<String> wordSet = loadDict("./dictionary.txt");
+
+        String startingWord = readWord(0);
+        String endingWord  = readWord(1);
+
+        if (checkValidity(startingWord,endingWord,wordSet) == 1) {
+            return;
+        }
+
+        System.out.printf("starting word:%s\n",startingWord);
+        System.out.printf("ending word:%s\n",endingWord);
+
+        Stack<String> ans = findLadder(startingWord, endingWord, wordSet);
+        if (ans.isEmpty()) {
+            System.out.println("not found");
+        }
+        else{
+            System.out.println("found");
+            System.out.println(ans);
+        }
+    }
+
+    private static Set<String> loadDict(String path) throws Exception{
         Set<String> wordSet = new TreeSet<String>();
 
-        String path = "./dictionary.txt";
         File dictFile = new File(path);
+
         if (!dictFile.exists()) {
             System.out.println("dict not exits");
         }
@@ -21,32 +45,31 @@ public class App
         BufferedReader reader = new BufferedReader(new FileReader(dictFile));
         String tempString = null;
         int line = 1;
+
         while ((tempString = reader.readLine()) != null) {
-//            words[line] = tempString;
             wordSet.add(tempString);
             line++;
         }
-//        while (line >= 0) {
-//            System.out.println("line " + line + ": " + words[line]);
-//            line--;
-//        }
+
         reader.close();
+        return wordSet;
+    }
 
-//        Arrays.sort(words);
-
-        String startingWord, endingWord;
+    private static String readWord(int mode) throws Exception{
+        String word;
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Enter starting word");
-        startingWord = br.readLine();
-        System.out.println("Enter ending word");
-        endingWord = br.readLine();
-        if (!wordSet.contains(endingWord)) {
-            System.out.println("ending word not exits");
-            return;
+        if (mode == 0) {
+            System.out.println("Enter starting word");
+            word = br.readLine();
         }
-        System.out.printf("starting word:%s\n",startingWord);
-        System.out.printf("ending word:%s\n",endingWord);
+        else {
+            System.out.println("Enter ending word");
+            word = br.readLine();
+        }
+        return word;
+    }
 
+    private static Stack<String> findLadder(String startingWord, String endingWord, Set<String> wordSet) {
         Queue<Stack<String>> queue = new LinkedList<Stack<String>>();
         Stack<String> beginningList = new Stack<String>();
         beginningList.push(startingWord);
@@ -63,10 +86,10 @@ public class App
                     }
                     String newWord = curWord.replaceFirst(String.valueOf(curWord.charAt(n)),String.valueOf((char)(i+97)));
                     if (newWord.equals(endingWord)) {
-                        System.out.println("found");
+//                        System.out.println("found");
                         curList.push(newWord);
-                        System.out.println(curList);
-                        return;
+//                        System.out.println(curList);
+                        return curList;
                     }
                     if (wordSet.contains(newWord)) {
                         Stack<String> newList = (Stack<String>) curList.clone();
@@ -76,6 +99,32 @@ public class App
                 }
             }
         }
-        System.out.println("not found");
+//        System.out.println("not found");
+        return new Stack<String>();
+    }
+
+    private static int checkValidity(String start, String end, Set<String> wordSet) {
+        if (!wordSet.contains(start)) {
+            System.out.println("starting word not exits");
+            return 1;
+        }
+
+        if (!wordSet.contains(end)) {
+            System.out.println("ending word not exits");
+            return 1;
+        }
+
+        if (start.equals(end)) {
+            System.out.println("ending word is the same as starting word");
+            return 1;
+        }
+
+        if (start.length() != end.length()) {
+            System.out.println("length of two words are not equal");
+            return 1;
+        }
+
+        return 0;
     }
 }
+
